@@ -25,8 +25,9 @@
 
 ### Built With
 
-- [![nest][nest.js]][nest-url]
-- [![typeorm][typeorm.js]][typeorm-url]
+- [![next][next.js]][next-url]
+- [![react][react.js]][react-url]
+- [![tailwind][tailwind.js]][tailwind-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,5 +66,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [next-url]: https://nextjs.org/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
-[react.js]: https://img.shields.io/badge/Tailwind-20232A?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB
-[react-url]: https://tailwindcss.com//
+[tailwind.js]: https://img.shields.io/badge/Tailwind-20232A?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB
+[tailwind-url]: https://tailwindcss.com//
