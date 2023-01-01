@@ -38,7 +38,7 @@ const Layout = (props: Props) => {
   return (
     <div>
       <Nav auth={auth} />
-      <div>{props.children}</div>
+      <div className="pt-12">{props.children}</div>
     </div>
   );
 };
