@@ -104,12 +104,13 @@ const OwnerMenu = () => {
                         <form className="w-4/5" onSubmit={addItem}>
                           <input
                             type="text"
+                            placeholder="item name"
                             name="itemName"
                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                           />
                           <textarea
-                            // type="text-area"
                             name="description"
+                            placeholder="item description"
                             className="relative resize-none block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                           ></textarea>
                           {error &&
