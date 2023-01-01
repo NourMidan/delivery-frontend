@@ -1,17 +1,69 @@
-# food delivery app
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### overview
+## About The Project
 
--this project was built using nextjs , in this project , you can register as owner or as user where owner can add items to his menu and edit orders belong to him and user can add items to his cart and create order using typeorm to presiste the database
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### to get started with the project
+### Built With
 
-- you will need to have node.js installed
-  then in the terminal use:
+- [![nest][nest.js]][nest-url]
+- [![typeorm][typeorm.js]][typeorm-url]
 
-- `npm install` to install all project dependencies
-- `npm run dev` to start the development server
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-#### Resources
+<!-- GETTING STARTED -->
 
-- [nest-documentation](https://nextjs.org/docs/getting-started/)
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+- Postgres server running
+
+- install packages
+  ```sh
+  npm install
+  ```
+
+## Usage
+
+this project was built using nestjs , in this project , you can register as owner or as user where owner can add items to his menu and edit orders belong to him and user can add items to his cart and create order using typeorm to presiste the database
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+- [nestjs documentation](https://docs.nestjs.com/)
+- [typeorm documentation](https://typeorm.io/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[next-url]: https://nextjs.org/
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[react.js]: https://img.shields.io/badge/Tailwind-20232A?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB
+[react-url]: https://tailwindcss.com//
