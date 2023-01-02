@@ -42,14 +42,21 @@ export default function UserOrders() {
             className="w-full bg-gray-200 p-4 rounded flex items-center justify-between mb-1 mx-auto"
           >
             <div>
-              <h1>Id: {order.id}</h1>
+              <h1>order id: {order.id}</h1>
               <div className="flex gap-4 flex-wrap">
                 {order.items.map((item) => {
-                  return <div key={item.id}>{item.name}</div>;
+                  return (
+                    <div
+                      className="bg-neutral-500 rounded text-white p-1"
+                      key={item.id}
+                    >
+                      {item.name}
+                    </div>
+                  );
                 })}
               </div>
             </div>
-            <h1>{order.status}</h1>
+            <h1 className="font-bold">{order.status}</h1>
           </div>
         );
       })}

@@ -89,15 +89,10 @@ const Menus = () => {
 
   return (
     <div className="container center mx-auto flex-col flex  items-center ">
-      <label htmlFor="serach" className="sr-only">
-        serach
-      </label>
       <input
-        id="serach"
-        name="serach"
-        type="text"
-        required
-        className="relative mt-10 w-3/5 block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+        type="search"
+        id="default-search"
+        className="block w-full mt-10 w-3/5 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white-50 focus:ring-blue-500 focus:border-indigo-500 dark:bg-white-700 focus:outline-none dark:border-white-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
         placeholder="Search"
         onChange={(e) => setSearchText(e.target.value)}
       />
@@ -117,10 +112,9 @@ const Menus = () => {
         <option value="drinks">drinks</option>
       </select>
       <div className="w-full">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
           Restaurants
         </h2>
-
         <div className=" mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {menus.map((menu: basicMenu) => {
             return (
