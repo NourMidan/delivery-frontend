@@ -50,7 +50,7 @@ const Menus = () => {
       .get(
         `${process.env.NEXT_PUBLIC_HOST}/menu/list?search=${
           search ? search : ""
-        }&category=${category ? category : ""}&limit=2&page=${currentPage}`
+        }&category=${category ? category : ""}&limit=4&page=${currentPage}`
       )
       .then((res) => {
         setMenus(res.data.items);
@@ -116,7 +116,6 @@ const Menus = () => {
         <option value="dessert">dessert</option>
         <option value="drinks">drinks</option>
       </select>
-
       <div className="w-full">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
           Restaurants
@@ -130,12 +129,21 @@ const Menus = () => {
                 onClick={() => router.push(`menus/${menu.id}`)}
                 key={menu.id}
               >
-                <div className="group relative   ">
-                  <Image
-                    alt="item"
-                    src={Images[menu.category[0]]}
-                    style={{ objectFit: "contain", borderRadius: "6px" }}
-                  />
+                <div className="group     ">
+                  <div
+                    style={{
+                      width: "250px",
+                      height: "300px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      alt="item"
+                      fill
+                      src={Images[menu.category[0]]}
+                      style={{ objectFit: "cover", borderRadius: "6px" }}
+                    />
+                  </div>
                   <div className="mt-4 flex justify-between">
                     <div>
                       <h3 className="text-lg font-bold text-gray-700">

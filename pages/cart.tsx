@@ -93,16 +93,25 @@ const Cart = () => {
           return (
             <div
               style={{ maxWidth: "300px" }}
-              className="cursor-pointer"
+              className="cursor-pointer "
               key={item.id}
             >
-              <div className="group relative">
+              <div className="group flex flex-col  justify-between items-center relative">
                 {cart?.category && (
-                  <Image
-                    alt="item"
-                    src={Images[cart!.category[0]]}
-                    style={{ objectFit: "contain", borderRadius: "6px" }}
-                  />
+                  <div
+                    style={{
+                      width: "250px",
+                      height: "300px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      alt="item"
+                      fill
+                      src={Images[cart!.category[0]]}
+                      style={{ objectFit: "cover", borderRadius: "6px" }}
+                    />
+                  </div>
                 )}
                 <div className="mt-4 flex justify-between">
                   <div className="w-full">

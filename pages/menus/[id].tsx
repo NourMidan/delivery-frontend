@@ -87,19 +87,31 @@ const Menu = () => {
           return (
             <div
               style={{ maxWidth: "300px" }}
-              className="cursor-pointer"
+              className="cursor-pointer mt-10"
               key={item.id}
             >
-              <div className="group relative">
-                <Image
-                  alt="item"
-                  src={Images[type]}
-                  style={{ objectFit: "contain", borderRadius: "6px" }}
-                />
+              <div className="group flex flex-col h-full justify-between items-center relative">
+                <div
+                  style={{
+                    width: "250px",
+                    height: "300px",
+                    position: "relative",
+                  }}
+                >
+                  <Image
+                    alt="item"
+                    fill
+                    src={Images[type]}
+                    style={{ objectFit: "cover", borderRadius: "6px" }}
+                  />
+                </div>
                 <div className="mt-4 flex justify-between">
                   <div className="w-full">
-                    <h3 className="text-lg font-bold text-gray-700 mb-3">
+                    <h3 className="text-lg font-bold text-center text-gray-700 mb-3">
                       {item.name}
+                    </h3>
+                    <h3 className="text-sm text-center  text-gray-700 mb-3">
+                      {item.description}
                     </h3>
                     <div className="flex justify-center flex-wrap gap-3	">
                       {auth.type === "user" && (

@@ -78,13 +78,21 @@ const OwnerItem = (props: Props) => {
         className="cursor-pointer"
         key={item.id}
       >
-        <div className="group relative">
-          <Image
-            alt="item"
-            src={image[type]}
-            style={{ objectFit: "contain", borderRadius: "6px" }}
-          />
-
+        <div className="group flex flex-col h-full justify-between items-center relative">
+          <div
+            style={{
+              width: "250px",
+              height: "300px",
+              position: "relative",
+            }}
+          >
+            <Image
+              alt="item"
+              fill
+              src={image[type]}
+              style={{ objectFit: "cover", borderRadius: "6px" }}
+            />
+          </div>
           <div className="mt-4 flex justify-between">
             <div className="w-full flex flex-col items-center">
               <h3 className="text-lg font-bold text-gray-700 mb-3">
