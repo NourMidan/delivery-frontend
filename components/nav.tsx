@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Router from "next/router";
+import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import { Auth, authActions, Type } from "../store/auth";
+import SideCart from "./sideCart";
 
 let menus = (
   <Link
@@ -52,18 +54,19 @@ let userorders = (
     orders
   </Link>
 );
-let cart = (
-  <Link
-    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-    href={"/cart"}
-  >
-    cart
-  </Link>
-);
 
 const Nav = (props: { auth: Auth }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["jwt", "type"]);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
+  const cart = (
+    <button
+      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      onClick={() => setOpen(true)}
+    >
+      cart
+    </button>
+  );
   const handleLogut = () => {
     removeCookie("jwt");
     removeCookie("type");
@@ -120,6 +123,7 @@ const Nav = (props: { auth: Auth }) => {
             {type === "owner" && <div>{logut}</div>}
           </div>
         </div>
+        <SideCart open={open} setOpen={(value: boolean) => setOpen(value)} />
       </div>
     </nav>
   );
