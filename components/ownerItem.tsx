@@ -107,15 +107,17 @@ const OwnerItem = (props: Props) => {
               <div className="flex justify-center flex-wrap gap-3	">
                 <button
                   onClick={() => deleteItem()}
-                  className=" flex justify-center relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  className=" flex justify-center relative inline-flex items-center rounded-md border  bg-red-700 px-4 py-2 text-sm text-white font-medium hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                 >
-                  delete
+                  Delete
                 </button>
+
                 <button
+                  type="button"
                   onClick={() => setUpdate(true)}
-                  className=" flex justify-center relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 >
-                  update
+                  Update
                 </button>
               </div>
             </div>
@@ -169,17 +171,17 @@ const OwnerItem = (props: Props) => {
                               </p>
                             );
                           })}
-                        <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <div className=" px-4 py-3 sm:flex flex justify-center sm:flex-row-reverse sm:px-6">
                           <button
                             type="submit"
-                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                           >
                             Confirm
                           </button>
                           <button
                             type="button"
                             onClick={() => setUpdate(false)}
-                            className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                            className="text-gray bg-white-700 border border-gray-400 hover:bg-white-800 focus:ring-4 focus:ring-white-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white-600 dark:hover:bg-white-700 focus:outline-none dark:focus:ring-white-800"
                           >
                             Cancel
                           </button>

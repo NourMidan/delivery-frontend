@@ -56,7 +56,9 @@ const MenuOrders = () => {
   }
   return (
     <div className="container mx-auto mt-10 flex flex-col  ">
-      <h1 className="self-center text-2xl">{menu?.name}</h1>
+      <h1 className="self-center text-2xl sm:truncate sm:text-3xl sm:tracking-tight font-bold leading-7">
+        {menu?.name}
+      </h1>{" "}
       <div className="w-3/5  flex  flex-col  gap-4 mt-10 items-center justify-between mb-1 mx-auto">
         {orders?.map((order: Order) => {
           return (
@@ -64,8 +66,8 @@ const MenuOrders = () => {
               key={order.id}
               className="w-full bg-gray-200 p-4 rounded flex items-center justify-between mb-1 mx-auto"
             >
-              <div className="flex gap-3 items-center">
-                <h1>Id: {order.id}</h1>
+              <div>
+                <h1>Order id: {order.id}</h1>
                 <div className="flex gap-4 flex-wrap">
                   {order.items.map((item) => {
                     return (

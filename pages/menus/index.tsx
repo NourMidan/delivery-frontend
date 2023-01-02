@@ -92,7 +92,7 @@ const Menus = () => {
       <input
         type="search"
         id="default-search"
-        className="block w-full mt-10 w-3/5 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white-50 focus:ring-blue-500 focus:border-indigo-500 dark:bg-white-700 focus:outline-none dark:border-white-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+        className="block w-full mt-10 w-3/5 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white-50 focus:ring-blue-500 focus:border-indigo-500 dark:bg-white-700 focus:outline-none dark:border-white-600 dark:placeholder-white-400  dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
         placeholder="Search"
         onChange={(e) => setSearchText(e.target.value)}
       />

@@ -72,14 +72,17 @@ const OwnerMenu = () => {
   return (
     <div>
       <div className="container mx-auto mt-10 flex flex-col  ">
-        <h1 className="self-center text-2xl">{menu?.name}</h1>
+        <h1 className="self-center text-2xl sm:truncate sm:text-3xl sm:tracking-tight font-bold leading-7">
+          {menu?.name}
+        </h1>
         <button
           type="button"
           onClick={() => setAdd(true)}
-          className="mt-3 inline-flex w-full self-end rounded-md mr-10 border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+          className="mt-3 inline-flex w-full self-end rounded-md mr-10 border border-gray-300  text-base font-medium  shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
         >
-          add item
+          Add item
         </button>
+
         {add && (
           <div
             className="relative z-10 "
@@ -127,17 +130,17 @@ const OwnerMenu = () => {
                                 </p>
                               );
                             })}
-                          <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                          <div className=" px-4 py-3 sm:flex flex justify-center sm:flex-row-reverse sm:px-6">
                             <button
                               type="submit"
-                              className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                             >
                               Confirm
                             </button>
                             <button
                               type="button"
                               onClick={() => setAdd(false)}
-                              className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                              className="text-gray bg-white-700 border border-gray-400 hover:bg-white-800 focus:ring-4 focus:ring-white-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white-600 dark:hover:bg-white-700 focus:outline-none dark:focus:ring-white-800"
                             >
                               Cancel
                             </button>

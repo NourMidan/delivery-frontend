@@ -35,7 +35,7 @@ let ownerMenu = (
     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
     href={"/owner-menu"}
   >
-    menu
+    Menu
   </Link>
 );
 let menuOrders = (
@@ -43,7 +43,7 @@ let menuOrders = (
     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
     href={"/menu-orders"}
   >
-    orders
+    Orders
   </Link>
 );
 let userorders = (
@@ -51,7 +51,7 @@ let userorders = (
     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
     href={"/user-orders"}
   >
-    orders
+    Orders
   </Link>
 );
 
