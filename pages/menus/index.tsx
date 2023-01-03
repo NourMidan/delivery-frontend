@@ -55,7 +55,7 @@ const Menus = (props: Props) => {
       .get(
         `${process.env.NEXT_PUBLIC_HOST}/menu/list?search=${
           search ? search : ""
-        }&category=${category ? category : ""}&limit=2&page=${currentPage}`
+        }&category=${category ? category : ""}&limit=4&page=${currentPage}`
       )
       .then((res) => {
         setMenus(res.data.items);
