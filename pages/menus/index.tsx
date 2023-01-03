@@ -18,7 +18,12 @@ interface Meta {
   totalPages: number;
 }
 
-const Menus = () => {
+interface Props {
+  jwt?: string;
+  type?: string;
+}
+
+const Menus = (props: Props) => {
   const [menus, setMenus] = useState([]);
   const [meta, setMeta] = useState<Meta>({
     currentPage: 0,
@@ -40,10 +45,10 @@ const Menus = () => {
     "search",
     withDefault(StringParam, "")
   );
-
-  const type = useSelector(
-    (state: { auth: { type: Type } }) => state.auth.type
-  );
+  const { type, jwt } = props;
+  // const type = useSelector(
+  //   (state: { auth: { type: Type } }) => state.auth.type
+  // );
   const router = useRouter();
   const fetchMenus = async () => {
     let res = await axios
@@ -281,3 +286,15 @@ const Menus = () => {
 };
 
 export default Menus;
+
+export async function getServerSideProps(context: {
+  req: { cookies: { jwt?: string; type?: string } };
+}) {
+  const { jwt, type } = context.req.cookies;
+  return {
+    props: {
+      jwt,
+      type,
+    },
+  };
+}

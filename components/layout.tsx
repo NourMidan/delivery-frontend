@@ -26,6 +26,7 @@ const Layout = (props: Props) => {
     },
     [dispatch]
   );
+
   useEffect(() => {
     if (cookies.jwt) {
       validate(cookies.jwt);

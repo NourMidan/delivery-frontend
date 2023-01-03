@@ -6,30 +6,35 @@ import UnAuthorized from "../components/unauthorized";
 import { useSelector } from "react-redux";
 import { Auth, Type } from "../store/auth";
 
-export default function UserOrders() {
-  const [orders, setOrders] = useState([]);
+interface Props {
+  jwt: string;
+  type: string;
+  orders: Order[];
+}
+export default function UserOrders(props: Props) {
+  const [orders, setOrders] = useState<Order[]>([]);
   const [cookies] = useCookies(["jwt"]);
   const [error, setError] = useState();
   const { user, type } = useSelector((state: { auth: Auth }) => state.auth);
 
-  const fetchOrders = async () => {
-    let res = await axios
-      .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
-        headers: { Authorization: "bearer " + cookies.jwt },
-      })
-      .then((res) => {
-        setOrders(res.data);
-      })
-      .catch((err) => {
-        setError(err.response.data);
-      });
-  };
+  // const fetchOrders = async () => {
+  //   let res = await axios
+  //     .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
+  //       headers: { Authorization: "bearer " + cookies.jwt },
+  //     })
+  //     .then((res) => {
+  //       setOrders(res.data);
+  //     })
+  //     .catch((err) => {
+  //       setError(err.response.data);
+  //     });
+  // };
 
   useEffect(() => {
-    fetchOrders();
-  }, []);
+    setOrders(props.orders);
+  }, [props]);
 
-  if (error || type !== Type.user) {
+  if (error || props.type !== Type.user) {
     return <UnAuthorized />;
   }
 
@@ -62,4 +67,26 @@ export default function UserOrders() {
       })}
     </div>
   );
+}
+
+export async function getServerSideProps(context: {
+  req: { cookies: { jwt?: string; type?: string } };
+}) {
+  const { jwt, type } = context.req.cookies;
+
+  let orders = await axios
+    .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
+      headers: { Authorization: "bearer " + jwt },
+    })
+    .then((res) => {
+      return res.data;
+    });
+
+  return {
+    props: {
+      jwt,
+      type,
+      orders,
+    },
+  };
 }
