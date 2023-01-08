@@ -74,19 +74,27 @@ export async function getServerSideProps(context: {
 }) {
   const { jwt, type } = context.req.cookies;
 
-  let orders = await axios
-    .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
-      headers: { Authorization: "bearer " + jwt },
-    })
-    .then((res) => {
-      return res.data;
-    });
+  if (jwt) {
+    let orders = await axios
+      .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
+        headers: { Authorization: "bearer " + jwt },
+      })
+      .then((res) => {
+        return res.data;
+      });
 
-  return {
-    props: {
-      jwt,
-      type,
-      orders,
-    },
-  };
+    return {
+      props: {
+        jwt,
+        type,
+        orders,
+      },
+    };
+  } else {
+    return {
+      props: {
+        orders: [],
+      },
+    };
+  }
 }

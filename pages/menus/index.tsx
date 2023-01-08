@@ -288,12 +288,12 @@ const Menus = (props: Props) => {
 export default Menus;
 
 export async function getServerSideProps(context: {
-  req: { cookies: { jwt?: string; type?: string } };
+  req: { cookies: { type?: string } };
 }) {
-  const { jwt, type } = context.req.cookies;
+  const { type } = context.req.cookies;
+
   return {
     props: {
-      jwt,
       type,
     },
   };

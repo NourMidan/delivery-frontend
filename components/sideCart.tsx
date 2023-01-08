@@ -45,7 +45,7 @@ export default function Example(props: Props) {
   };
 
   useEffect(() => {
-    if (auth.type === "user") {
+    if (auth.type === "user" && cookies.jwt) {
       getCart();
     }
   }, [auth]);
