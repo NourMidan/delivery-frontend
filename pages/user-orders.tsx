@@ -74,7 +74,7 @@ export async function getServerSideProps(context: {
 }) {
   const { jwt, type } = context.req.cookies;
 
-  if (jwt) {
+  if (jwt && type === "user") {
     let orders = await axios
       .get(`${process.env.NEXT_PUBLIC_HOST}/order/list`, {
         headers: { Authorization: "bearer " + jwt },
